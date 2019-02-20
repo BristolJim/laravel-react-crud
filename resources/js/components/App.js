@@ -42,15 +42,19 @@ export default class App extends Component {
                 <div className="media-body">
                     <div>
                         {task.name}
+                        <span className="text-muted">
+                            <br/>
+                            by {task.user.name} | {task.updated_at}
+                        </span>
                         <Link
                             to={`/${task.id}/edit`}
-                            className="btn btn-sm btn-success float-right"
+                            className="btn btn-outline-danger btn-sm float-right"
                         >
                             Update
                         </Link>
                         <button
                             onClick={() => this.handleDelete(task.id)}
-                            className="btn btn-sm btn-warning float-right">Delete
+                            className="btn btn-outline-success btn-sm float-right mr-1">Delete
                         </button>
                     </div>
                 </div>
